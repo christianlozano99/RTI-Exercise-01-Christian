@@ -1,0 +1,1 @@
+additionalFiles contains my python notebook, sql query to extract data and the other data I was given for the task.
