@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang=en-US>
+  <head>
+    <title>Paginated View</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+
+  <!-- Implementing bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+ <!--Navigation System for Website -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">RTI Exercise 01</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Paginated View<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="ExploratoryAnalysis">Exploratory Analysis</a>
+            </li>
+        </ul>
+    </div>
+    </nav>
+  </div>
+
+    <div class="container">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Age</th>
+              <th>Education</th>
+              <th>Education Number</th>
+              <th>Capital Gain</th>
+              <th>Capital Loss</th>
+              <th>Hours per week</th>
+              <th>Over 50k</th>
+              <th>Work Class</th>
+              <th>Marital Statuses</th>
+              <th>Occupations</th>
+              <th>Races</th>
+              <th>Sexes</th>
+              <th>Countries</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in data %}
+            <tr>
+              <td>{{ item['id'] }}</td>
+              <td>{{ item['age'] }}</td>
+              <td>{{ item['education_levels'] }}</td>
+              <td>{{ item['education_num'] }}</td>
+              <td>{{ item['capital_gain'] }}</td>
+              <td>{{ item['capital_loss'] }}</td>
+              <td>{{ item['hours_week'] }}</td>
+              <td>{{ item['over_50k'] }}</td>
+              <td>{{ item['workclasses'] }}</td>
+              <td>{{ item['marital_statuses'] }}</td>
+              <td>{{ item['occupations'] }}</td>
+              <td>{{ item['races'] }}</td>
+              <td>{{ item['sexes'] }}</td>
+              <td>{{ item['countries'] }}</td>
+
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {{ pagination.links }}
+    </div>
+  </body>
+</html>
