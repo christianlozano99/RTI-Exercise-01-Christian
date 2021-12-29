@@ -16,7 +16,7 @@ def get_users(offset=0, per_page=20):
     return data[offset: offset + per_page]
 
 #Pagniated view page
-@app.route("/")
+@app.route("/paginatedView")
 def index():
     page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page')
 
@@ -36,7 +36,7 @@ def index():
                            pagination=pagination)
 
 #Pagniated view page
-@app.route("/ExploratoryAnalysis")
+@app.route("/")
 def ExploratoryAnalysis():
     page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page')
 
